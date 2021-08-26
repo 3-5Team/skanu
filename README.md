@@ -76,7 +76,7 @@
    mvn spring-boot:run
   ```
   
-# DDD 의 적용
+# DDD(Domain Driven Design) 의 적용
 
 - msaez.io 를 통해 구현한 Aggregate 단위로 Entity 를 선언 후, 구현을 진행하였다.
  Entity Pattern 과 Repository Pattern 을 적용하기 위해 Spring Data REST 의 RestRepository 를 적용하였다.
