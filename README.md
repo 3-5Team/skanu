@@ -775,7 +775,7 @@ kubectl get all -n skanu
 ```
 kubectl exec -it (siege POD 이름) -c siege -n istio-test-ns -- /bin/bash
 
-siege -c2 -t30S -v --content-type "application/json" 'http://20.200.225.249:8080/orders POST {"productId": 1, "qty":3, "paymentTyp": "cash", "cost": 1000, "productName": "Coffee"}'
+siege -c2 -t30S -v --content-type "application/json" 'http://EXTERNAL-IP:8080/orders POST {"productId": 1, "qty":3, "paymentTyp": "cash", "cost": 1000, "productName": "Coffee"}'
 ```
 
 - 최종결과 확인
