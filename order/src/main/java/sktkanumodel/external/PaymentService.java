@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 // import java.util.Date;
 
 //@FeignClient(name="payment", url="http://localhost:8082")
-@FeignClient(name="payment", url="http://${api.url.payment}")
+@FeignClient(name="payment", url="${api.url.payment}")
 public interface PaymentService {
     @RequestMapping(method= RequestMethod.POST, path="/payments")
     public void paid(@RequestBody Payment payment);
