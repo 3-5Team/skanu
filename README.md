@@ -792,12 +792,12 @@ siege -c2 -t30S -v --content-type "application/json" 'http://20.200.225.249:8080
 - 생성된 siege Pod 안쪽에서 정상작동 확인
 ```
 kubectl exec -it siege -- /bin/bash
-siege -c1 -t2S -v http://order:8080/order
+siege -c1 -t2S -v http://order:8080/orders
 ```
 
 - siege 로 배포작업 직전에 워크로드를 모니터링 함
 ```
-siege -c1 -t60S -v http://order:8080/orders --delay=1S
+siege -c1 -t60S -v http://order:8080/orders
 ```
 
 - Readiness가 설정되지 않은 yml 파일로 배포 진행
