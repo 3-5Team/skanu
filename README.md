@@ -504,27 +504,27 @@ git clone https://github.com/3-5Team/skanu.git
 ```bash
 cd ..
 cd order
-mvn package -B
+mvn package
 az acr build --registry x0006319acr --image x0006319acr.azurecr.io/order:latest .
 
 cd ..
 cd payment
-mvn package -B
+mvn package
 az acr build --registry x0006319acr --image x0006319acr.azurecr.io/payment:latest .
 
 cd ..
 cd delivery
-mvn package -B
+mvn package
 az acr build --registry x0006319acr --image x0006319acr.azurecr.io/delivery:latest .
 
 cd ..
 cd ordertrace
-mvn package -B
+mvn package
 az acr build --registry x0006319acr --image x0006319acr.azurecr.io/ordertrace:latest .
 
 cd ..
 cd gateway
-mvn package -B
+mvn package
 az acr build --registry x0006319acr --image x0006319acr.azurecr.io/gateway:latest .
 
 ```
