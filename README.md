@@ -714,8 +714,8 @@ $ watch kubectl get all
 - FeignClient + istio를 활용하여 Circuit Breaker 동작을 확인한다.
 - istio 설치 후 istio injection이 enabled 된 namespace를 생성한다.
 ```
-kubectl create namespace istio-test-ns
-kubectl label namespace istio-test-ns istio-injection=enabled
+kubectl create namespace skanu
+kubectl label namespace skanu istio-injection=enabled
 ```
 
 - namespace label에 istio-injection이 enabled 된 것을 확인한다.  
@@ -726,21 +726,21 @@ kubectl label namespace istio-test-ns istio-injection=enabled
 
 - deploy 실행
 ```Bash
-kubectl create deploy order --image skccacr.azurecr.io/order:latest -n istio-test-ns
-kubectl create deploy payment --image skccacr.azurecr.io/payment:latest -n istio-test-ns
-kubectl create deploy delivery --image skccacr.azurecr.io/delivery:latest -n istio-test-ns
-kubectl create deploy gateway --image skccacr.azurecr.io/gateway:latest -n istio-test-ns
-kubectl create deploy ordertrace --image skccacr.azurecr.io/ordertrace:latest -n istio-test-ns
+kubectl create deploy order --image skccacr.azurecr.io/order:latest -n skanu
+kubectl create deploy payment --image skccacr.azurecr.io/payment:latest -n skanu
+kubectl create deploy delivery --image skccacr.azurecr.io/delivery:latest -n skanu
+kubectl create deploy gateway --image skccacr.azurecr.io/gateway:latest -n skanu
+kubectl create deploy ordertrace --image skccacr.azurecr.io/ordertrace:latest -n skanu
 kubectl get all
 ```
 
 - expose 하기
 ```Bash
-kubectl expose deploy order --type="ClusterIP" --port=8080 -n istio-test-ns
-kubectl expose deploy payment --type="ClusterIP" --port=8080 -n istio-test-ns
-kubectl expose deploy delivery --type="ClusterIP" --port=8080 -n istio-test-ns
-kubectl expose deploy gateway --type="LoadBalancer" --port=8080 -n istio-test-ns
-kubectl expose deploy ordertrace --type="ClusterIP" --port=8080 -n istio-test-ns
+kubectl expose deploy order --type="ClusterIP" --port=8080 -n skanu
+kubectl expose deploy payment --type="ClusterIP" --port=8080 -n skanu
+kubectl expose deploy delivery --type="ClusterIP" --port=8080 -n skanu
+kubectl expose deploy gateway --type="LoadBalancer" --port=8080 -n skanu
+kubectl expose deploy ordertrace --type="ClusterIP" --port=8080 -n skanu
 kubectl get all
 ```
 
@@ -756,7 +756,7 @@ kubectl get all
   kind: DestinationRule
   metadata:
     name: dr-httpbin
-    namespace: istio-test-ns
+    namespace: skanu
   spec:
     host: gateway
     trafficPolicy:
