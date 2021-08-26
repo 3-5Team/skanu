@@ -15,7 +15,7 @@
 
 비기능적 요구사항
 1. 트랜잭션
-    1. 결제가 되지 않은 주문건은 등록이 성립되지 않는다. - Sync 호출
+    1. 결제가 되지 않으면 주문건은 등록이 성립되지 않는다. - Sync 호출
 2. 장애격리
     1. 결제가 수행되지 않더라도 주문 취소은 365일 24시간 받을 수 있어야 한다  - Async(event-driven), Eventual Consistency
     2. 결제 시스템이 과중되면 주문(Order)을 잠시 후 처리하도록 유도한다  - Circuit breaker, fallback
