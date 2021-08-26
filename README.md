@@ -726,11 +726,11 @@ kubectl label namespace istio-test-ns istio-injection=enabled
 
 - deploy 실행
 ```Bash
-kubectl create deploy order --image x0006319acr.azurecr.io/order:latest -n istio-test-ns
-kubectl create deploy payment --image x0006319acr.azurecr.io/payment:latest -n istio-test-ns
-kubectl create deploy delivery --image x0006319acr.azurecr.io/delivery:latest -n istio-test-ns
-kubectl create deploy gateway --image x0006319acr.azurecr.io/gateway:latest -n istio-test-ns
-kubectl create deploy ordertrace --image x0006319acr.azurecr.io/ordertrace:latest -n istio-test-ns
+kubectl create deploy order --image skccacr.azurecr.io/order:latest -n istio-test-ns
+kubectl create deploy payment --image skccacr.azurecr.io/payment:latest -n istio-test-ns
+kubectl create deploy delivery --image skccacr.azurecr.io/delivery:latest -n istio-test-ns
+kubectl create deploy gateway --image skccacr.azurecr.io/gateway:latest -n istio-test-ns
+kubectl create deploy ordertrace --image skccacr.azurecr.io/ordertrace:latest -n istio-test-ns
 kubectl get all
 ```
 
