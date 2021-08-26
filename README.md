@@ -586,7 +586,7 @@ spec:
     spec:
       containers:
         - name: order
-          image: x0006319acr.azurecr.io/order:latest
+          image: skccacr.azurecr.io/order:latest
           ports:
             - containerPort: 8080
 ```
