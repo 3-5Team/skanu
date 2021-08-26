@@ -693,10 +693,10 @@ kubectl autoscale deploy order --min=1 --max=10 --cpu-percent=15
 
 ![image](https://user-images.githubusercontent.com/89397401/130735894-d889090c-95c6-4fa7-a1b5-aa1311e11eb9.png)
 
-siege를 활용하여, 부하 생성한다. (200명의 동시사용자가 10초간 부하 발생)
+siege를 활용하여, 부하 생성한다. (2명의 동시사용자가 10초간 부하 발생)
 
 ```sh
-siege -c200 -t10S -v --content-type "application/json" 'http://order:8080/orders POST { "productId": 1, "qty": 2, "paymentType" : "card", "cost" : 2000, "productName" : "RedTea"}'
+siege -c2 -t10S -v --content-type "application/json" 'http://order:8080/orders POST { "productId": 1, "qty": 2, "paymentType" : "card", "cost" : 2000, "productName" : "RedTea"}'
 ```
 
 - Autoscale을 확인하기 위해 모니터링한다.
