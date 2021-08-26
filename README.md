@@ -731,7 +731,7 @@ kubectl create deploy payment --image skccacr.azurecr.io/payment:latest -n skanu
 kubectl create deploy delivery --image skccacr.azurecr.io/delivery:latest -n skanu
 kubectl create deploy gateway --image skccacr.azurecr.io/gateway:latest -n skanu
 kubectl create deploy ordertrace --image skccacr.azurecr.io/ordertrace:latest -n skanu
-kubectl get all
+kubectl get all -n skanu
 ```
 
 - expose 하기
@@ -741,7 +741,7 @@ kubectl expose deploy payment --type="ClusterIP" --port=8080 -n skanu
 kubectl expose deploy delivery --type="ClusterIP" --port=8080 -n skanu
 kubectl expose deploy gateway --type="LoadBalancer" --port=8080 -n skanu
 kubectl expose deploy ordertrace --type="ClusterIP" --port=8080 -n skanu
-kubectl get all
+kubectl get all -n skanu
 ```
 
 - 서비스들이 정상적으로 배포되었고, Container가 2개씩 생성된 것을 확인한다. 
