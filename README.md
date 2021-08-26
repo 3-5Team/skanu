@@ -768,8 +768,7 @@ kubectl get all -n skanu
 
 - 설정된 Destinationrule을 확인한다. 
 
-![image](https://user-images.githubusercontent.com/89397401/130916203-069469c2-248b-49a5-a23c-eedb442e3373.png)
-
+![image](https://user-images.githubusercontent.com/89397401/130977740-9fb3cbe1-4207-48ca-a835-8f1b13fa7d64.png)
 
 - siege 를 활용하여 User가 2명인 상황에 대해서 요청을 보낸다. (설정값 c2)
   - siege 는 같은 namespace 에 생성하고, 해당 pod 안에 들어가서 siege 요청을 실행한다.
