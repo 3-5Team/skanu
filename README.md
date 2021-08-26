@@ -711,7 +711,7 @@ $ watch kubectl get all
 
 ## Circuit Breaker
 
-- Spring FeignClient + istio를 활용하여 Circuit Breaker 동작을 확인한다.
+- FeignClient + istio를 활용하여 Circuit Breaker 동작을 확인한다.
 - istio 설치 후 istio injection이 enabled 된 namespace를 생성한다.
 ```
 kubectl create namespace istio-test-ns
