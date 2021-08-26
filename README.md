@@ -15,12 +15,12 @@
 
 비기능적 요구사항
 1. 트랜잭션
-    1. 결제가 되지 않으면 주문건은 등록이 성립되지 않는다. - Sync 호출
+    1. 결제가 되지 않으면, 주문은 받아지지 않아야 한다. - Sync 방식
 2. 장애격리
-    1. 결제가 수행되지 않더라도 주문 취소은 365일 24시간 받을 수 있어야 한다  - Async(event-driven), Eventual Consistency
-    2. 결제 시스템이 과중되면 주문(Order)을 잠시 후 처리하도록 유도한다  - Circuit breaker, fallback
+    1. 결제가 수행되지 않더라도 주문 취소은 지속적으로 받을 수 있어야 한다.  - Async(event-driven)
+    2. 결제 시스템이 과중되면 주문(Order)을 잠시 후 처리하도록 유도한다.  - Circuit breaker, fallback
 3. 성능
-    1. 마이페이지에서 주문상태(OrderTrace) 확인  - CQRS
+    1. 마이페이지에서 주문상태(OrderTrace) 확인한다. - CQRS
 
 # 분석/설계
 
