@@ -720,7 +720,7 @@ kubectl label namespace skanu istio-injection=enabled
 
 - namespace label에 istio-injection이 enabled 된 것을 확인한다.  
 
-![image](https://user-images.githubusercontent.com/89397401/130896837-0c6d68ec-f5e0-4ccf-be46-7f089829aaa7.png)
+![image](https://user-images.githubusercontent.com/89397401/130982037-c78b9dfe-328b-4712-b60d-d5954be8cab0.png)
 
 - 해당 namespace에 기존 서비스들을 재배포한다.
 
