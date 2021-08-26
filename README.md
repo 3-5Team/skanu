@@ -95,7 +95,7 @@ import org.springframework.beans.BeanUtils;
 @Table(name="Order_table")
 public class Order {
 
-    @Id
+    @Idㄹ패
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     private Long productId;
@@ -688,7 +688,7 @@ order/kubernetes/deployment.yml
 order 서비스에 대한 replica 를 동적으로 늘려주도록 HPA 를 설정한다. 설정은 CPU 사용량이 15%를 넘어서면 replica를 10개까지 늘려준다.
 
 ```sh
-kubectl autoscale deploy vote --min=1 --max=10 --cpu-percent=15
+kubectl autoscale deploy order --min=1 --max=10 --cpu-percent=15
 ```
 
 ![image](https://user-images.githubusercontent.com/89397401/130735894-d889090c-95c6-4fa7-a1b5-aa1311e11eb9.png)
