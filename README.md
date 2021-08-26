@@ -746,7 +746,7 @@ kubectl get all -n skanu
 
 - 서비스들이 정상적으로 배포되었고, Container가 2개씩 생성된 것을 확인한다. 
 
-![image](https://user-images.githubusercontent.com/89397401/130897459-f4d97481-bfb0-4422-957b-cab08b3fa9ef.png)
+![image](https://user-images.githubusercontent.com/89397401/130979652-92c51535-35f0-4c98-b5fa-3ad9fb85941b.png)
 
 - Circuit Breaker 설정을 위해 아래와 같은 Destination Rule을 생성한다.
 
