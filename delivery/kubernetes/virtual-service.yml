@@ -1,0 +1,12 @@
+  apiVersion: networking.istio.io/v1alpha3
+  kind: VirtualService
+  metadata:
+    name: vs-delivery-network-rule
+  spec:
+    hosts:
+    - delivery
+    http:
+    - route:
+      - destination:
+          host: delivery
+      timeout: 3s

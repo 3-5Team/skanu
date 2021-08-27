@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order
+  labels:
+    app: order
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: order
+  template:
+    metadata:
+      labels:
+        app: order
+    spec:
+      containers:
+        - name: order
+          image: skccacr.azurecr.io/order:latest
+          ports:
+            - containerPort: 8080      
+# Readiness Probe TEST               
+          #readinessProbe:
+          #  httpGet:
+          #    path: '/actuator/health'
+          #    port: 8080
+          #  initialDelaySeconds: 10
+          #  timeoutSeconds: 2
+          #  periodSeconds: 5
+          #  failureThreshold: 10
+# Liveness Probe TEST          
+          #livenessProbe:
+          #  httpGet:
+          #    path: '/actuator/health'
+          #    port: 8090
+          #  initialDelaySeconds: 5
+          #  timeoutSeconds: 2
+          #  periodSeconds: 5
+          #  failureThreshold: 5          
+# HPA TEST
+          #resources:
+          #  requests:
+          #    memory: "64Mi"
+          #    cpu: "250m"
+          #  limits:
+          #    memory: "500Mi"
+          #    cpu: "500m"
+# PVC TEST
+          #volumeMounts:
+          #  - name: volume
+          #    mountPath: "/mnt/azure"
+      #volumes:
+      #- name: volume
+      #  persistentVolumeClaim:
+      #    claimName: order-disk  
